@@ -1,0 +1,45 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/members" method="POST" class="mb-4">
+	<h3 class="mb-3">Sign up:</h3>
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" name="name" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" name="email" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" name="password" class="form-control" />
+	</div>
+
+	<div class="form-group">
+        <label for="role">Role</label>
+		<select name="role" class="custom-select custom-select-lg my-3">
+			<option value="general">General User</option>
+			<option value="admin">Admin</option>
+		</select>
+	</div>
+
+	<input type="submit" value="Sign Up" class="btn btn-primary btn-block mt-2" />
+</form>
+
+<form action="/api/members/login" method="GET" class="mb-4">
+    <h5>Already a member?</h5>
+    <h3 class="mb-3">Log in</h3>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" />
+    </div>
+
+    <div class="form-group" "mb-8">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" />
+    </div>
+
+    <input type="submit" value="Log In" class="btn btn-primary btn-block mt-2" />
+</form>
