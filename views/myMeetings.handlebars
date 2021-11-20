@@ -1,3 +1,29 @@
 {{! """populate this with all meeting entries in the users' DB""" }}
+<h2>Signed in as {{currentUser.userName}}</h2>
 
-<h3>Looks like you have no upcoming meetings :(</h3>
+<p>Refresh to view your meetings</p>
+<div class="d-flex">
+	<form action="/myMeetings/create" method="POST" class="mb-4">
+		<input
+			type="submit"
+			value="+ Add New Meeting"
+			class="btn btn-primary btn-block mt-2"
+		/>
+	</form>
+</div>
+<ul class="list-group">
+	{{#each allMeetings}}
+		<li class="list-group-item">
+			{{this.date}}
+			{{#each this.times}}
+				<input
+					class="form-check-input"
+					type="checkbox"
+					value=""
+					id="flexCheckDefault"
+				/>
+				{{this}}
+			{{/each}}
+		</li>
+	{{/each}}
+</ul>
